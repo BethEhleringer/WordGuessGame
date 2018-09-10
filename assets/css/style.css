@@ -1,0 +1,76 @@
+h1, h2 {
+   
+font-family: 'Freckle Face', cursive;
+text-align:center;
+
+/*font-family: 'Fontdiner Swanky', cursive;*/
+
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    /*background-image: url("../images/halloweenWallpaper.jpg");*/
+    background-image: linear-gradient(rgb(17, 5, 70), rgb(70,17,95));
+    background-repeat: repeat-x;
+    background-color:rgb(70,17,95);
+}
+
+.main {
+    height:100%;
+    /*background-color:#000;*/
+    color:#FFF;
+   padding:20px;
+}
+
+.letter {
+    background:#FFF;
+    padding:5px;
+    margin:5px;
+    color:#000;
+    font-family:'Fontdiner Swanky', cursive;
+    font-size:18px;
+    text-align:center;
+}
+
+.letterSpace {
+    padding: 5px;
+    margin:5px;
+    min-width:24px;
+}
+
+
+.jumbotron {
+    background-color:#e55610;
+    color: #9b158a;
+
+}
+.jumbotron h1 {
+    text-shadow: 2px 2px #000;
+    font-size:48px;
+}
+
+footer {
+   background-color: #666;
+    /*width:960px;*/
+    /*background-image: url("http://www.textures4photoshop.com/tex/thumbs/free-transparent-grass-texture-seamless-PNG-thumb43.png")
+    /*background-image: url(http://www.textures4photoshop.com/tex/thumbs/free-transparent-grass-texture-seamless-PNG-thumb43.png)*/
+    width: 100%;
+    
+    padding-right:0px;
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    /*border-top:solid 4px #555;*/
+    margin: 0 auto;
+    color:#000;
+    padding:10px 0px 1px 0px;
+    z-index: 3;
+
+}
+
+footer p {
+color:#fff;
+text-align:center;
+
+}

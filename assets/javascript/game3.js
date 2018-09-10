@@ -31,7 +31,6 @@
     // Create an array of spaces which will be filled in by correct letters
     var blankWord = ["_", "_", "_", "_"];
 
-    document.getElementById("user-wins").innerHTML = userWins;
     document.getElementById("blank-word").innerHTML = blankWord;
 
     document.getElementById("guesses-remaining").innerHTML = userGuesses;
@@ -47,7 +46,7 @@
 
       //Subtract 1 from userGuesses
 
-      userGuesses = (userGuesses - 1);
+      --userGuesses;
       console.log("Guesses left: ", userGuesses)
 
       //Is user guess in gameWord?
@@ -61,30 +60,11 @@
 
         if (j === -1) {
             lettersGuessed.push(userGuess);
-            //userGuesses = userGuesses - 1;
-            document.getElementById("guesses-remaining").innerHTML = userGuesses;
+
             console.log(lettersGuessed)
 
         }
-        else {
-            lettersGuessed.push(userGuess);
-            //userGuesses = userGuesses - 1;
-            document.getElementById("guesses-remaining").innerHTML = userGuesses;
-            console.log(lettersGuessed) 
-        }
-
-        /*if {
-            (gameWord[0]===blankWord[0])
-                alert("User wins this round!");
-                userWins++;
-                document.getElementById("user-wins").innerHTML = userWins;
-            }*/
-
-        
-
-            
-       
 
         document.getElementById("already-guessed").innerHTML = lettersGuessed;
-    
-    }
+    };
+ 

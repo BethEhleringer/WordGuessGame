@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+  
+  
+ /* Array.prototype.getDuplicates = function () {
+    var duplicates = {};
+    for (var i = 0; i < this.length; i++) {
+        if(duplicates.hasOwnProperty(this[i])) {
+            duplicates[this[i]].push(i);
+        } else if (this.lastIndexOf(this[i]) !== i) {
+            duplicates[this[i]] = [i];
+        }
+    }
+//Note for future: user the same variable for each word but have a for loop that changes it each time.
+    return duplicates;*/
+var candyOne = "harvest mix"
+var candyTwo = "candy corn"
+var candyThree = "snickers"
+var gameTurns = [candyOne, candyTwo, candyThree];
+arrayCandyOne = candyOne.split("");
+console.log("arrayCandyOne is ", arrayCandyOne);
+a = new Array("s", "n", "i", "c", "k", "e", "r", "s");
+
+s = a.join("");  // s is the string "1+2+3+testing"
+console.log(s);
+
+for (var i = 0; i < a.length; i++) {
+    document.write("_ ");
+}
+
+/*for (var j = 0; j < gameTurns.length; j++) {
+    var i = gameTurns.j;
+    for (i = 0; i < i.length; i++);
+    console.log(i);
+}*/
+for (var i = 0; i < candyOne.length; i++) {
+    console.log(candyOne.charAt(i));
+    document.write(candyOne.charAt(i));
+}
+
+for (var i = 0; i < candyOne.length; i++) {
+    document.write("_ ");
+}
+
+    var t = "candy corn";
+for (var i = 0; i < candyTwo.length; i++) {
+    console.log(candyTwo.charAt(i));
+}
+
+    var u = "snickers";
+    for (var i = 0; i < candyThree.length; i++) {
+        console.log(candyThree.charAt(i));
+    }
+
+
+
+
+
+/*};
+["abc","def","abc"].getDuplicates() 
+console.log(duplicates)*/
+  
+  </script>  
+</body>
+</html>

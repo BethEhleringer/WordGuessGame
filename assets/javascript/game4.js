@@ -26,11 +26,52 @@
     var userGuesses = 15;
     // Create an empty array for wrong letters guessed.
     var lettersGuessed = []
+
+    //new stuff... first word
+    var candyOne = "harvest mix"
+    // change word into an array
+    var arrayCandyOne = candyOne.split("");
+
+    var arrayBlanks = [arrayCandyOne.length];
+    console.log("arrayBlanks is ", arrayBlanks)
+
+    /*function fillBlankArray(value, len) {
+        if (len == 0) return [];
+        var a = [value];
+        while (a.length * 2 <= len) a = a.concat(a);
+        if (a.length < len) a = a.concat(a.slice(0, len - a.length));
+        return a;
+      }*/
+
+    //generate a new array of JUST BLANK LINES that is the same length as word array
+   /* function fillArray(value, len) {
+        var arr = [];
+        for (var i = 0; i < len; i++) {
+          arr.push(value);
+        }
+        return arr;
+      }*/
+    function fillArray(_) {
+        arrayBlanks = [];
+        for (var i = 0; i < length; i++) {
+          arr.push(value);
+          return arrayBlanks;
+        
+      }
+      fillArray();
+      console.log("arrayBlanks is ", arrayBlanks);
+
+    for (var i = 0; i < arrayCandyOne.length; i++) {
+        document.write("_ ");
+    }
+
     // Create an array with letters of the game word.
     var gameWord = ["c", "a", "t", "s"];
     // Create an array of spaces which will be filled in by correct letters
     var blankWord = ["_", "_", "_", "_"];
 
+    document.getElementById("test").innerHTML = arrayBlanks;
+    
     document.getElementById("user-wins").innerHTML = userWins;
     document.getElementById("blank-word").innerHTML = blankWord;
 
@@ -87,4 +128,4 @@
 
         document.getElementById("already-guessed").innerHTML = lettersGuessed;
     
-    }
+        }}
