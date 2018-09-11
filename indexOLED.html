@@ -10,7 +10,11 @@
     <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky|Freckle+Face" rel="stylesheet">
 </head>
 <body>
-
+    <Header>
+        <div class="jumbotron">
+            <h1>Trick or Treat!</h1>
+        </div>
+    </Header>
         <div class="row">
                 <div class="col-lg-1 col-md-1 d-block"></div>
                 <div class="col col-lg-10 col-md-10 col-sm-12 col-12">
@@ -26,16 +30,14 @@
                                     <h3>Instructions:</h3>
                                     <p>Press any key to get started!</p>
                                     <p>Wins: <span id="user-wins"></span> </p>
-                                    <h3 id="word" style="visibility:hidden;"></h3>
-                                    <h4 id="blank-word" ><span id="blank-word"></h4>
+                                    <h4 id="blank-word">blankWord</h4>
                                     <p>Number of Guesses Remaining: <span id="guesses-remaining"></span></p>
                                     <p>Letters already guessed: <span id="already-guessed"></span></p>
-
+                                
 
                                </div>
                                     </div>
                                 <div class="col col-lg-5 col-md-10 col-sm-12 col-12">
-                                    <img src="assets/images/jackOLanternBucket.png" >
                                     <div id="treat-image" class="main">
 
                                     </div>
@@ -47,17 +49,15 @@
             
             </div>
 
-            <footer class="footer">
-                
+          <!--  <footer class="footer">
                 <p>2018 Elizabeth Ehleringer</p>
-            
                 
-            </footer> 
+            </footer> -->
 
 
 
     
-<!--< Instructions
+<!-- Instructions
     3. Use key events to listen for the letters that your players will type.
 
 4. Display the following on the page:
@@ -130,7 +130,7 @@
         for (var i = 0; i < s.length; i++) {
         console.log(s.charAt(i));
 }
-    };>
+    };
   </script> -->
     <script src="assets/javascript/game.js"></script> 
 </body>
