@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Question Game</title>
+</head>
+
+<body>
+
+  <h1>Question Game!</h1>
+
+  <p>User Wins: <span id="score"></span></p>
+  <p id="word"></p>
+  <p id="blank-word"></p>
+  <p>Letters already guessed: <span id="already-guessed"></span></p>
+  <p>Guesses remaining: <span id="guesses-remaining"></span></p>
+
+  <script>
+  
+    // VARIABLES
+    // ==========================================================================
+ // The array of words for our word game.
+    var words = ["zombie", "ghost", "monster"];
+
+    // We start the game with a score of 0.
+    var score = 0;
+
+    // Variable to hold the index of current question.
+    var wordIndex = 0;
+
+    //
+    document.getElementById("score").innerHTML = score;
+
+        //for each word, set guesses to 15
+        var letterGuesses = 15;
+
+//create an empty array of letters used. (This is reset each round.)
+var lettersGuessed = [];
+
+//var k = 0;
+    //Change string in words[i] into an array of letters.
+//var gameWord = words[k]; /*this is the current word*/
+//test it
+console.log("testing123", words[wordIndex]);
+gameWordArray = words[wordIndex].split(""); /*this splits the current word into an array of letters*/
+//test it
+console.log("gameWordArray is: ", gameWordArray);
+//Make an array of blanks that is the same length as the array gameWord.
+var blankWord = [];
+for (i = 0; i < gameWordArray.length; i++) {
+    blankWord.push("_");
+}; 
+
+    document.getElementById("blank-word").innerHTML = blankWord;
+
+// FUNCTIONS
+// ==============================================================================
+// Function to render words.
+    function renderWord() {
+      // If there are still more questions, render the next one.
+      if (wordIndex <= (words.length - 1)) {
+        document.querySelector("#word").innerHTML = words[wordIndex];
+        }
+        // If there aren't, render the end game screen.
+        else {
+            document.querySelector("#word").innerHTML = "Game Over!";
+            document.querySelector("#score").innerHTML = "Final Score: " + score + " out of " + words.length;
+        }
+    }
+
+// Function that updates the score...
+    function updateScore() {
+      document.querySelector("#score").innerHTML = "Score: " + score;
+    }
+    //testing
+    console.log(words[wordIndex])
+
+    // MAIN PROCESS
+    // ==============================================================================
+
+// Calling functions to start the game.
+renderWord();
+updateScore();
+
+// When the user presses a key, it will run the following function...
+document.onkeyup = function(event) {
+
+    // If there are no more questions, stop the function.
+    if (wordIndex === words.length) {
+    return;
+    }
+
+    //for each word, set guesses to 15
+    var letterGuesses = 15;
+
+    //create an empty array of letters used. (This is reset each round.)
+    var lettersGuessed = [];
+
+    //var k = 0;
+        //Change string in words[i] into an array of letters.
+    //var gameWord = words[k]; /*this is the current word*/
+    //test it
+    console.log("testing123", words[wordIndex]);
+    gameWordArray = words[wordIndex].split(""); /*this splits the current word into an array of letters*/
+    //test it
+    console.log("gameWordArray is: ", gameWordArray);
+    //Make an array of blanks that is the same length as the array gameWord.
+    var blankWord = [];
+    for (i = 0; i < gameWordArray.length; i++) {
+        blankWord.push("_");
+    }; 
+
+          // Determine which key was pressed, make it lowercase, and set it to the userInput variable.
+      var userInput = event.key.toLowerCase();
+
+      // Only run this code if "t" or "f" were pressed.
+      //if (userInput === 'a' || userInput === 'b' || userInput === 'c' || userInput === 'd' || userInput === 'e' || userInput === 'f' || userInput === 'g' || userInput === 'h' || userInput === 'i' || userInput === 'j' || userInput === 'k' || userInput === 'l' || userInput === 'm' || userInput === 'n' || userInput === 'o' || userInput === 'p' || userInput === 'q' || userInput === 'r' || userInput === 's' || userInput === 't' || userInput === 'u' || userInput === 'v' || userInput === 'w' || userInput === 'x' || userInput === 'y' || userInput === 'z') {
+
+//Subtract 1 from userGuesses
+
+letterGuesses = (letterGuesses - 1);
+console.log("Guesses left: ", letterGuesses)
+
+//Is userInput in gameWordArray?
+  var j = gameWordArray.indexOf(userInput)
+  console.log("index of userInput in gameWordArray: ", j)
+
+// If yes, add userInput to appropriate location in blankWord.
+  blankWord[j] = userInput;
+
+  //reset blankSpaces to show letter that user has guessed.
+
+  document.getElementById("blank-word").innerHTML = blankWord;
+
+  if (j === -1) {
+      lettersGuessed.push(userInput);
+      //userGuesses = userGuesses - 1;
+      document.getElementById("guesses-remaining").innerHTML = letterGuesses;
+      console.log(lettersGuessed)
+      document.getElementById("already-guessed").innerHTML = lettersGuessed;
+
+  }
+  else {
+      lettersGuessed.push(userInput);
+      //userGuesses = userGuesses - 1;
+      document.getElementById("guesses-remaining").innerHTML = letterGuesses;
+      console.log(lettersGuessed) 
+      document.getElementById("already-guessed").innerHTML = lettersGuessed;
+
+  }
+
+console.log("the guess is ", blankWord);
+console.log('the word is ', gameWordArray);
+(blankWord === gameWordArray) ;
+//}
+
+
+
+
+
+
+
+
+
+
+        // If they guess the correct answer, increase and update score, alert them they got it right.
+        if (blankWord === words[wordIndex]) {
+          alert("Correct!");
+          score++;
+          updateScore();
+        }
+        // If wrong, alert them they are wrong.
+        else {
+          alert("Wrong!");
+        }
+
+}
+   
+     // Variable to hold the index of current question.
+     //var wordIndex = words[0];
+
+    
+/*   var blankSpaces = blankWord.join(" ");
+    document.getElementById("blank-word").innerHTML = blankSpaces;
+
+    document.getElementById("guesses-remaining").innerHTML = letterGuesses;
+
+    document.getElementById("already-guessed").innerHTML = lettersGuessed;
+
+     var guessString = blankWord.join("");
+ if (guessString === gameWord) {
+     alert("You won this round!")
+     userWins = (userWins + 1);
+     document.getElementById("user-wins").innerHTML = userWins;
+     wordIndex++;
+     console.log(wordIndex);
+ }*/
+
+    
+
+
+
+
+
+    //Function to change string from words[i] to array of letters (gameWord).
+
+    //Function to record key stroke
+
+    //Function to check if character typed is located in array gameWord.
+
+    //If character typed is located in array gameword, then record the index and replace the index in blankWord with this character.
+    //If blankWord[] === gameWord[], then alert ("You won this round!"), change image, and add one to user score.
+    //If character typed is not located in array gameWord, then push the character into array lettersGuessed.
+    //Also subtract 1 from letterGuesses.
+    // If letterGuesses < 1, alert the player that they lost that round, show words[i] (or gameWord[]) and start new round with the next word.
+    //If 
+
+
+
+
+
+
+
+  /*if {
+      (gameWord[0]===blankWord[0])
+          alert("User wins this round!");
+          userWins++;
+          document.getElementById("user-wins").innerHTML = userWins;
+      }*/
+
+
+
+      
+ 
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>
